@@ -1,0 +1,20 @@
+<div class="d-flex gap-3 my-4">
+  <div class="mb-3 form-check">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="todo{{ index }}"
+      (click)="onCheckboxClick(todo)"
+      [checked]="!todo.active"
+    />
+  </div>
+  <div [ngClass]="{ strike: !todo.active }">
+    <h5>{{ todo.sno }} {{ todo.title }}</h5>
+    <p>{{ todo.desc }}</p>
+  </div>
+  <div>
+    <button type="button" class="btn btn-danger" (click)="onClick(todo)">
+      Delete
+    </button>
+  </div>
+</div>
